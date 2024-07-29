@@ -1,0 +1,30 @@
+import random
+from flask import Flask
+app = Flask(__name__)
+
+r_g = ["Teknolojik bağımlılık çalışması, modern bilimsel araştırmanın en ilgili alanlarından biridir.",
+       "2019'da yapılan bir araştırmaya göre, insanların %60'ından fazlası akıllı telefonlarındaki iş mesajlarına işten ayrıldıktan sonraki 15 dakika içinde yanıt veriyor.",
+       "Elon Musk, sosyal ağların içeriği görüntülemek için mümkün olduğunca fazla zaman harcamamız için bizi platformun içinde tutmak üzere tasarlandığını iddia ediyor.",
+       "Sosyal ağların olumlu ve olumsuz yanları vardır ve bu platformları kullanırken her ikisinin de farkında olmalıyız."]
+
+yazı_tura = ["Yazı","Tura"]
+
+sifreolusturucu = ["HSwhJHWkad","DHhHJJjJhjHjhJHfTFJ","HGhghHhGhhghHghjbnbN","JJhjhJjhj131123--**22","Sksjsj22231","JhsjsjHHSHj21312","JSS12123","JSu2281349411","MSkdNFP2ı13u"]
+
+@app.route("/")
+def hello_world():
+    return '<a href="/denemesayfasi">Rastgele bir gerçeği görüntüle!</a>'
+
+@app.route("/denemesayfasi")
+def ornek():
+    return f'<p>{random.choice(r_g)}</p>'
+
+@app.route("/yazıtura")
+def odev():
+    return f'<p>{random.choice(yazı_tura)}</p>'
+
+@app.route("/sifre")
+def sıfre():
+    return f'<p>{random.choice(sifreolusturucu)}</p>'
+
+app.run(debug=True)
